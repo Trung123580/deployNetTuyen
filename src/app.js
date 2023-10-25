@@ -20,6 +20,13 @@ const db = mysql.createConnection({
   password: '',
   database: 'nettruyencomments',
 });
+app.get('/', (req, res) => {
+  const sql = 'SELECT * FROM users';
+  db.query(sql, (err, data) => {
+    if (err) return res.json('Error');
+    return res.json(data);
+  });
+});
 app.get('/user', (req, res) => {
   const sql = 'SELECT * FROM users';
   db.query(sql, (err, data) => {
