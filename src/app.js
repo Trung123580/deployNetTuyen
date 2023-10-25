@@ -23,7 +23,7 @@ const db = mysql.createConnection({
 app.get('/', (req, res) => {
   const sql = 'SELECT * FROM users';
   db.query(sql, (err, data) => {
-    if (err) return res.json('Error');
+    if (err) return res.json('????????????');
     return res.json(data);
   });
 });
